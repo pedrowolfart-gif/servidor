@@ -1,17 +1,19 @@
 import express from "express";
-
 const app = express();
 
-app.get("/carros", (req, res) => {
-res.send("servidor de carros funcionando")
+let alunos = [
+    {id: 1, nome:"samuel", idade: 23},
+    {id: 2, nome:"daniel", idade: 17},
+    {id: 3, nome:"jonas", idade: 53}
+];
+
+
+app.get("/alunos", (req, res) => {
+    res.send (alunos);
 });
 
-app.get("/carros/mercedes", (req, res) => {
-res.send("servidor da mercedes")
-});
+
 
 app.listen(3000, () => {
-    console.log("servidor rodando")
+    console.log ("servidor rodando na porta 3000")
 });
-
-
