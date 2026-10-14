@@ -12,7 +12,11 @@ app.get("/alunos", (req, res) => {
     res.send (alunos);
 });
 
-
+app.post("/alunos", (req, res) => {
+    const aluno = req.body;
+    alunos.push(aluno);
+    res.send(alunos);
+});
 
 app.listen(3000, () => {
     console.log ("servidor rodando na porta 3000")
