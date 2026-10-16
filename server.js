@@ -20,7 +20,9 @@ app.post("/alunos", (req, res) => {
 });
 
 app.delete("/alunos/:id", (req, res) => {
-  const id = req.params.id;
+  const id = Number (req.params.id);
+  alunos = alunos.filter(aluno => aluno.id !== id);
+  res.send()
 });
 
 app.listen(3000, () => {
